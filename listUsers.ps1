@@ -1,0 +1,1 @@
+Get-ADObject -LDAPFilter "(&(objectClass=user)(mail=*)(sn=*)(!(useraccountcontrol:1.2.840.113556.1.4.803:=2)))" -Properties * | Select -property Name,GivenName,sn,Mail,DistinguishedName | export-csv -NoTypeInformation -path "D:\users.csv"
